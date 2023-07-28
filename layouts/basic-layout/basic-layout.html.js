@@ -5,7 +5,7 @@
    };
 
    function get() {
-      return `<div class="form-layout">
+      return `<div class="basic-layout">
     <div class="section-a"></div>
     <div class="section-b"></div>
     <div class="section-c"></div>
