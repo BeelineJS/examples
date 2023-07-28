@@ -1,10 +1,14 @@
 module.exports = {
   create,
-  onUserEvent
+  init
 }
 
+const userEvents = {
+  'click/ok-button': _close
+};
+
 function create(context) {
-  const { e, view, viewModel, model, util, doc } = context;
+  const { model, util } = context;
 
   const value = {
     title: util.encode(model.value.title),
@@ -13,14 +17,12 @@ function create(context) {
   return require('./Alert.html.js')(value);
 }
 
-function onUserEvent(context) {
+function init(context) {
+  const { events } = context;
+  events.user.set(userEvents);
+}
 
-  const { e, view, viewModel, model, util, doc } = context;
-  switch (e.target.dataset.key) {
-    case 'ok-button':
-      view.core.remove();
-
-      break;
-  }
-
+function _close(context) {
+  const { view } = context;
+  view.core.remove();
 }
