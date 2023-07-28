@@ -1,0 +1,58 @@
+{
+    "layouts": [{
+        "name": "basic-layout",
+        "parentPath": "body"
+    }],
+    "viewModels": [{
+        "key": "va",
+        "value": 3
+    }],
+    "models": [{
+            "key": "a",
+            "value": "Page Title"
+        },
+        {
+            "key": "b1",
+            "value": "Link A"
+        },
+        {
+            "key": "b2",
+            "value": "Link B"
+        },
+        {
+            "key": "b3",
+            "value": "Link C"
+        },
+        {
+            "key": "c",
+            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }
+    ],
+    "views": [{
+            "mKey": "a",
+            "vmKey": "va",
+            "component": "Hx",
+            "parentPath": ".section-a"
+        },
+        {
+            "mKey": "b1",
+            "component": "A",
+            "parentPath": ".section-b"
+        },
+        {
+            "mKey": "b2",
+            "component": "A",
+            "parentPath": ".section-b"
+        },
+        {
+            "mKey": "b3",
+            "component": "A",
+            "parentPath": ".section-b"
+        },
+        {
+            "mKey": "c",
+            "component": "Paragraph",
+            "parentPath": ".section-c"
+        }
+    ]
+}

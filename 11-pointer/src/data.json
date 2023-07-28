@@ -1,0 +1,11 @@
+{
+    "models": [{
+        "key": "pointer",
+        "value": 1
+    }],
+    "views": [{
+        "mKey": "pointer",
+        "component": "Pointer",
+        "parentPath": "body"
+    }]
+}

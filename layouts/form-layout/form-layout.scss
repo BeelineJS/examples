@@ -1,0 +1,42 @@
+.form-layout {
+    input {
+        width: 200px;
+    }
+
+    select: {
+        width: auto;
+    }
+
+    .response {
+        position: absolute;
+        left: 50%;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        padding: 20px;
+    }
+
+    .form {
+        position: absolute;
+        right: 50%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        padding: 20px;
+        border-right: 1px dashed #CCCCCC;
+
+        label {
+            display: inline-block;
+            width: 90px;
+        }
+
+        div {
+            margin-bottom: 20px;
+        }
+    }
+
+
+    hr {
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,19 @@
+p.Increment {
+
+    color: #000000;
+    border: 1px solid;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+
+    &:hover {
+        background: #F1F1F1;
+    }
+
+    display: inline-block;
+
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}

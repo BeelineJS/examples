@@ -1,0 +1,55 @@
+.basic-layout {
+    .section-a {
+        background: #e7eddf;
+        right: 0;
+        height: 40px;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid #CCCCCC;
+        z-index: 1;
+        padding-bottom: 0;
+
+        h3 {
+            margin: 0;
+        }
+
+        padding: 10px 0 0 10px;
+    }
+
+    .section-b {
+        background: #FAFAFA;
+        left: 0;
+        top: 41px;
+        width: 100px;
+        bottom: 0;
+        padding-top: 20px;
+        padding-left: 10px;
+
+        a:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        a {
+            display: block;
+            margin-bottom: 5px;
+        }
+    }
+
+    .section-c {
+        background: #FEFEFA;
+        top: 41px;
+        right: 0;
+        left: 100px;
+        bottom: 0;
+        padding-top: 20px;
+        padding-left: 10px;
+        border-left: 1px solid #CCCCCC;
+    }
+
+    .section-a,
+    .section-b,
+    .section-c {
+        position: absolute;
+    }
+}

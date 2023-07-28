@@ -1,0 +1,37 @@
+@import '../../components/style.scss';
+@import '../../layouts/style.scss';
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    a {
+        display: block;
+    }
+
+    .section-a,
+    .section-b,
+    .section-c {
+        padding: 10px;
+    }
+
+    h3 {
+        margin: 0;
+    }
+
+    .red {
+        color: red;
+    }
+
+    .blue {
+        color: blue;
+    }
+
+    .green {
+        color: green;
+    }
+
+    button,
+    p {
+        margin-left: 10px;
+    }
+}

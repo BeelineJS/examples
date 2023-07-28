@@ -1,0 +1,138 @@
+H1 {
+  margin: 0;
+}
+
+.Alert {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: #221121;
+  background: #FAFAFA;
+  opacity: 0.8;
+}
+.Alert h1 {
+  font-size: 16px;
+  margin: 0;
+}
+.Alert .alert-box {
+  border: 1px solid #676767;
+  width: 500px;
+  margin-left: -250px;
+  margin-top: 100px;
+  left: 50%;
+  position: absolute;
+}
+.Alert p {
+  color: black;
+}
+.Alert .alert-header,
+.Alert .alert-body {
+  padding: 10px;
+}
+.Alert .alert-body {
+  background: #FAFAFA;
+}
+.Alert .alert-header {
+  border-bottom: 1px solid #676767;
+  background: #EAEAEA;
+}
+.Alert .close-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: none;
+  border: none;
+}
+.Alert [data-key=ok-button] {
+  margin: 10px;
+  cursor: pointer;
+}
+.Alert .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+H1 {
+  color: #221121;
+}
+
+p {
+  color: green;
+}
+
+H1 {
+  color: #221121;
+}
+
+H2 {
+  color: #500759;
+}
+
+H3 {
+  color: #0e59ac;
+}
+
+H4 {
+  color: #16b3e6;
+}
+
+H5 {
+  color: #54dee1;
+}
+
+H6 {
+  color: #1d6c67;
+}
+
+p.Increment {
+  color: #000000;
+  border: 1px solid;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+p.Increment:hover {
+  background: #F1F1F1;
+}
+
+.Paragraph {
+  color: green;
+  white-space: pre-wrap;
+}
+
+.pointer {
+  position: absolute;
+  color: green;
+  border-radius: 20px;
+  margin-left: -10px;
+  margin-top: -10px;
+  height: 10px;
+  width: 10px;
+  background: red;
+  border: 1px solid;
+}
+
+.Resize.wrapper {
+  position: absolute;
+}
+.Resize.wrapper span {
+  min-width: 20px;
+  display: inline-block;
+}
+
+H1 {
+  color: #221121;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}

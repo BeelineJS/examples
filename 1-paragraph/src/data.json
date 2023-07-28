@@ -1,0 +1,11 @@
+{
+    "models": [{
+        "key": "text",
+        "value": "Text Example"
+    }],
+    "views": [{
+        "mKey": "text",
+        "component": "Paragraph",
+        "parentPath": "body"
+    }]
+}

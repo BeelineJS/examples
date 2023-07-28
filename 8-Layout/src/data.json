@@ -1,0 +1,6 @@
+ {
+     "layouts": [{
+         "name": "basic-layout",
+         "parentPath": "body"
+     }]
+ }

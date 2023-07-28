@@ -1,0 +1,11 @@
+{
+    "models": [{
+        "key": "resize",
+        "value": 1
+    }],
+    "views": [{
+        "mKey": "resize",
+        "component": "Resize",
+        "parentPath": "body"
+    }]
+}

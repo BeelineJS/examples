@@ -1,0 +1,67 @@
+.Alert {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    color: #221121;
+    background: #FAFAFA;
+    opacity: .8;
+
+    h1 {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .alert-box {
+        border: 1px solid #676767;
+
+        width: 500px;
+        margin-left: -250px;
+        margin-top: 100px;
+        left: 50%;
+        position: absolute;
+    }
+
+    p {
+        color: black;
+    }
+
+    .alert-header,
+    .alert-body {
+        padding: 10px;
+    }
+
+    .alert-body {
+        background: #FAFAFA;
+    }
+
+    .alert-header {
+        border-bottom: 1px solid #676767;
+        background: #EAEAEA;
+    }
+
+
+    .close-button {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background: none;
+        border: none;
+    }
+
+    [data-key="ok-button"] {
+        margin: 10px;
+        cursor: pointer;
+    }
+
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}

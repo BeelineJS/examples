@@ -1,0 +1,73 @@
+ {
+     "models": [{
+             "key": "FirstName",
+             "value": "",
+             "form": "Form"
+         },
+         {
+             "key": "LastName",
+             "value": "",
+             "form": "Form"
+         },
+         {
+             "key": "Gender",
+             "value": "",
+             "form": "Form"
+         },
+         {
+             "key": "Email",
+             "value": "",
+             "form": "Form"
+         },
+         {
+             "key": "Phone",
+             "value": "",
+             "form": "Form"
+         },
+         {
+             "key": "Submit",
+             "value": "Submit"
+         }
+     ],
+     "views": [{
+             "mKey": "FirstName",
+             "component": "TextInput",
+             "parentPath": ".form .first-name"
+         },
+         {
+             "mKey": "LastName",
+             "component": "TextInput",
+             "parentPath": ".form .last-name"
+         },
+         {
+             "mKey": "Gender",
+             "component": "TextInput",
+             "parentPath": ".form .gender"
+         },
+         {
+             "mKey": "Email",
+             "component": "TextInput",
+             "parentPath": ".form .email"
+         },
+         {
+             "mKey": "Phone",
+             "component": "TextInput",
+             "parentPath": ".form .phone"
+         },
+         {
+             "mKey": "Submit",
+             "component": "Button",
+             "parentPath": ".submit-form",
+             "request": {
+                 "type": "post",
+                 "uri": "submit-form",
+                 "formKey": "Form",
+                 "data": {}
+             }
+         }
+     ],
+     "layouts": [{
+         "name": "form-layout",
+         "parentPath": "#content"
+     }]
+ }

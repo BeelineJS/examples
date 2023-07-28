@@ -1,0 +1,26 @@
+ {
+     "models": [{
+             "key": "content",
+             "value": "When Kareem Abdul-Jabbar retired in 1989, he left the NBA with a record that many felt would never be broken. The Hall of Famer ended his playing career with 38,387 points, putting him alone atop the league's all-time scoring list. More than three decades later, another Lakers star is nearing Abdul - Jabbar 's incredible mark. LeBron James is on pace to pass Abdul-Jabbar and widen the gap between the two basketball legends before the end of the 2022-23 season."
+         },
+         {
+             "key": "alert",
+             "value": {
+                 "title": "Alert Title",
+                 "content": "Some content for the alert box"
+             }
+         }
+     ],
+     "views": [{
+             "mKey": "content",
+             "component": "Paragraph",
+             "parentPath": "#content"
+
+         },
+         {
+             "mKey": "alert",
+             "component": "Alert",
+             "parentPath": "#modal"
+         }
+     ]
+ }

@@ -1,0 +1,70 @@
+{
+    "models": [{
+            "key": "a1",
+            "value": "Red"
+        },
+        {
+            "key": "a2",
+            "value": "Green"
+        },
+        {
+            "key": "a3",
+            "value": "Blue"
+        },
+        {
+            "key": "b",
+            "value": {
+                "name": "Click Colour",
+                "css": "black"
+            }
+        }
+    ],
+    "views": [{
+            "mKey": "a2",
+            "component": "Button",
+            "parentPath": "body",
+            "dispatch": [{
+                "type": "click",
+                "name": "set-colour",
+                "value": "Green",
+                "data": {
+                    "css": "green",
+                    "name": "Green"
+                }
+            }]
+        },
+        {
+            "mKey": "a1",
+            "component": "Button",
+            "parentPath": "body",
+            "value": "Red",
+            "dispatch": [{
+                "type": "click",
+                "name": "set-colour",
+                "data": {
+                    "css": "red",
+                    "name": "Red"
+                }
+            }]
+        },
+        {
+            "mKey": "a3",
+            "component": "Button",
+            "parentPath": "body",
+            "value": "Blue",
+            "dispatch": [{
+                "type": "click",
+                "name": "set-colour",
+                "data": {
+                    "css": "blue",
+                    "name": "Blue"
+                }
+            }]
+        },
+        {
+            "mKey": "b",
+            "component": "ClassNameSubscriber",
+            "parentPath": "body"
+        }
+    ]
+}

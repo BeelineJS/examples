@@ -1,0 +1,10 @@
+.Resize {
+    &.wrapper {
+        position: absolute;
+
+        span {
+            min-width: 20px;
+            display: inline-block;
+        }
+    }
+}

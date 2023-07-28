@@ -1,0 +1,25 @@
+@import '../../components/style.scss';
+@import '../../layouts/style.scss';
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    a {
+        display: block;
+        pointer-events: none;
+    }
+
+    .section-a,
+    .section-b,
+    .section-c {
+        padding: 10px;
+    }
+
+    h3 {
+        margin: 0;
+    }
+
+    p {
+        margin-top: 0;
+    }
+}

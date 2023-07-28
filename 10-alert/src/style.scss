@@ -1,0 +1,23 @@
+@import '../../components/style.scss';
+@import '../../layouts/style.scss';
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#content,
+#modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#model {
+    display: none;
+
+    &.active {
+        display: 'block';
+    }
+}
