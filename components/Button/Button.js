@@ -1,18 +1,28 @@
 module.exports = {
   create,
   render,
-  onUserEvent
+  init
 }
 
-function create(context) {
-  const { e, view, viewModel, model, util, doc } = context;
+const userEvents = {
+  'click': _onClick
+};
 
-  const name =util.encode(model.value, doc);
+function create(context) {
+  const { model, util, doc } = context;
+
+  const name = util.encode(model.value, doc);
   return require('./Button.html.js')(name);
 }
 
+function init(context) {
+  const { events } = context;
+
+  events.user.set(userEvents);
+}
+
 function render(context) {
-  const { e, view, viewModel, model, util, doc } = context;
+  const { e, view, model, util, doc } = context;
 
   if (!['click'].includes(e.type)) return;
 
@@ -21,10 +31,8 @@ function render(context) {
   el.innerHTML = model.value;
 }
 
-function onUserEvent(context) {
-  const { e, view, viewModel, model, util, doc } = context;
-
-  if (!['click'].includes(e.type)) return;
+function _onClick(context) {
+  const { e, view, model } = context;
 
   view.dispatch
     .filter(dis => dis.type === e.type)

@@ -44,7 +44,7 @@ describe("Pointer", () => {
 
             bj._.events.window._.onWindowEvent(event);
 
-            expect(resize.style.top).toBe('512px');
-            expect(resize.style.left).toBe('990px');
+            expect(resize.style.top).toBe('250px');
+            expect(resize.style.left).toBe('500px');
         });
 });
