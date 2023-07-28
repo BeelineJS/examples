@@ -42,7 +42,7 @@ describe("Pointer", () => {
                 stopImmediatePropagation() { },
             };
 
-            bj._.events.window._.onEvent(event);
+            bj._.events.window._.onWindowEvent(event);
 
             expect(resize.style.top).toBe('512px');
             expect(resize.style.left).toBe('990px');

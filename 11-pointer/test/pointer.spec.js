@@ -42,7 +42,7 @@ describe("Pointer", () => {
         doc
       };
 
-      bj._.events.document._.onEvent(event, doc);
+      bj._.events.document._.onDocumentEvent(event, doc);
 
       expect(pointer.style.top)
         .toBe('100px');

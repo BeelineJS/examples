@@ -1,11 +1,15 @@
 module.exports = {
   create,
   render,
-  onDocumentEvent
+  init
 }
 
+const documentEvents = {
+  'mousemove': render
+};
+
 function create(context) {
-  const { e, view, viewModel, model, doc, win } = context;
+  const { win } = context;
 
   const value = {
     top: parseInt(win.innerHeight / 2),
@@ -15,20 +19,15 @@ function create(context) {
   return require('./Pointer.html.js')(value);
 }
 
+function init(context) {
+  const { events } = context;
+  events.document.set(documentEvents);
+}
+
 function render(context) {
-  const { e, view, viewModel, model, doc, win } = context;
+  const { e, view, doc } = context;
 
   const el = doc.getElementById(view.id);
   el.style.top = `${e.clientY}px`;
   el.style.left = `${e.clientX}px`;
-}
-
-function onDocumentEvent(context) {
-  const { e } = context;
-
-  switch (e.type) {
-    case 'mousemove':
-      render(context)
-      break;
-  }
 }
