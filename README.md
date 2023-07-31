@@ -13,7 +13,7 @@ Reloading page data using an interval of 1000 by loading new model that would up
 ### 4 - Select
 Select example using View Data and Model
 
-### 5 *- Select bind
+### 5 - Select bind
 Select example of changing View Data while mainting View Value
 
 ### 6 - Click Increment
