@@ -4,20 +4,17 @@ module.exports = {
 }
 
 function create(context) {
-  const { e, view, viewModel, model, util, doc } = context;
-
+  const { data, value, util } = context;
   const content = {
-    html: util.encode(model.value),
-    type: viewModel.value
+    html: util.encode(value),
+    type: data
   }
 
   return require('./Hx.html.js')(content);
 }
 
 function render(context) {
-  const { e, view, viewModel, model, util, doc } = context;
-
-  const html = util.encode(model.value);
-  const el = doc.getElementById(view.id);
-  el.innerHTML = html;
+  const { el, value, util, } = context;
+  const html = util.encode(value);
+  el().innerHTML = html;
 }

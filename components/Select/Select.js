@@ -1,43 +1,34 @@
 module.exports = {
   create,
   init,
-  render,
-  onUserEvent
+  render
+}
+
+const userEvents = {
+  'change': _onChange
 }
 
 function create(context) {
-  const { e, view, viewModel, model, doc } = context;
-
-  const value = _getOptions(viewModel.value);
+  const { data } = context;
+  const value = _getOptions(data);
 
   return require('./templates/Select.html.js')(value);
 }
 
 function init(context) {
-  const { e, view, viewModel, model, doc } = context;
-
-  const el = doc.getElementById(view.id);
-  el.value = model.value;
+  const { el, events, value } = context;
+  el().value = value;
+  events.user.set(userEvents);
 }
 
 function render(context) {
-  const { e, view, viewModel, model, doc } = context;
-
-  const el = doc.getElementById(view.id);
-  el.value = model.value;
+  const { el, value } = context;
+  el().value = value;
 }
 
-function onUserEvent(context) {
-  const { e, view, viewModel, model, doc } = context;
-
-  const el = doc.getElementById(view.id);
-
-  switch (e.type) {
-    case 'change':
-      return el.value;
-  }
-
-  return model.value;
+function _onChange(context) {
+  const { el } = context;
+  return el().value;
 }
 
 function _getOptions(options) {

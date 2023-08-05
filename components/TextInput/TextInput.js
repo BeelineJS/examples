@@ -1,35 +1,32 @@
 module.exports = {
   create,
-  render,
-  onUserEvent
+  init,
+  render
+}
+
+const userEvents = {
+  'change': _onInput,
+  'input': _onInput
 }
 
 function create(context) {
-  const { e, view, viewModel, model, util, doc } = context;
+  const { value, util } = context;
 
-  const value = util.encode(model.value);
-  return require('./TextInput.html.js')(value);
+  const templateValue = util.encode(value);
+  return require('./TextInput.html.js')(templateValue);
+}
+
+function init(context) {
+  const { events } = context;
+  events.user.set(userEvents)
 }
 
 function render(context) {
-  const { e, view, viewModel, model, util, doc } = context;
-
-  const html = util.encode(model.value);
-  const el = doc.getElementById(view.id);
-  el.innerHTML = html;
+  const { el, value, util } = context;
+  const html = util.encode(value);
+  el().innerHTML = html;
 }
 
-function onUserEvent(context) {
-  const { e, view, viewModel, model, util, doc } = context;
-
-  switch (e.type) {
-    case 'change':
-    case 'input':
-      break;
-    default:
-      return;
-  }
-
-  return document.querySelector(`#${view.id}`)
-    .value;
+function _onInput(context) {
+  return context.el().value;
 }

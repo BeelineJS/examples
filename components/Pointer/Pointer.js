@@ -25,9 +25,8 @@ function init(context) {
 }
 
 function render(context) {
-  const { e, view, doc } = context;
+  const { e, el } = context;
 
-  const el = doc.getElementById(view.id);
-  el.style.top = `${e.clientY}px`;
-  el.style.left = `${e.clientX}px`;
+  el().style.top = `${e.clientY}px`;
+  el().style.left = `${e.clientX}px`;
 }

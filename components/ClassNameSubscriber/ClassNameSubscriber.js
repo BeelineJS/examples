@@ -1,50 +1,25 @@
 module.exports = {
   create,
-  init,
-  render
+  init
 }
 
 function create(context) {
-  const { e, view, viewModel, model, doc } = context;
+  const { value } = context;
 
-  return require('./ClassNameSubscriber.html.js')(model.value.name);
+  return require('./ClassNameSubscriber.html.js')(value.name);
 }
 
 function init(context) {
-  const { e, view, viewModel, model, doc } = context;
-
-  view.core.subscribe('set-colour', setColourFn);
-
-  function setColourFn(data) {
-    _setColour(data, view, viewModel, model, doc);
-  }
+  const { view } = context;
+  view.core.subscribe('set-colour', _setColourFn(context));
 }
 
-function render(context) {
-  const { e, view, viewModel, model, doc } = context;
 
-  switch (e.type) {
-    case 'click':
-    case 'event':
-      break;
-    default:
-      return;
+function _setColourFn(context) {
+  return function _setColour(value) {
+    const { el } = context;
+
+    el().innerHTML = value.name;
+    el().className = value.css;
   }
-  const el = doc.getElementById(view.id);
-  el.innerHTML = model.value.name;
-  el.className = model.value.css;
-}
-
-function _setColour(data, view, viewModel, model, doc) {
-  model.value = data;
-  render({
-    e: {
-      type: 'event'
-    },
-    view,
-    viewModel,
-    model,
-    util: view.util,
-    doc
-  })
 }

@@ -1,5 +1,5 @@
 H1 {
-  color: #221121;
+  margin: 0;
 }
 
 .Alert {
@@ -117,6 +117,8 @@ p.Increment:hover {
   margin-top: -10px;
   height: 10px;
   width: 10px;
+  background: red;
+  border: 1px solid;
 }
 
 .Resize.wrapper {
@@ -129,6 +131,10 @@ p.Increment:hover {
 
 H1 {
   color: #221121;
+}
+
+input.TextInput {
+  padding: 2px;
 }
 
 body {

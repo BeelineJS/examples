@@ -8,13 +8,14 @@ const userEvents = {
 };
 
 function create(context) {
-  const { model, util } = context;
+  const { value, util } = context;
 
-  const value = {
-    title: util.encode(model.value.title),
-    content: util.encode(model.value.content)
+  const templateValue = {
+    title: util.encode(value.title),
+    content: util.encode(value.content)
   }
-  return require('./Alert.html.js')(value);
+
+  return require('./Alert.html.js')(templateValue);
 }
 
 function init(context) {
