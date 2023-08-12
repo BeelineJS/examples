@@ -17,18 +17,18 @@ function create(context) {
 
 function init(context) {
   const { el, events, value } = context;
-  el().value = value;
+  el.value = value;
   events.user.set(userEvents);
 }
 
 function render(context) {
   const { el, value } = context;
-  el().value = value;
+  el.value = value;
 }
 
 function _onChange(context) {
   const { el } = context;
-  return el().value;
+  return el.value;
 }
 
 function _getOptions(options) {

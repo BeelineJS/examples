@@ -21,12 +21,12 @@ function init(context) {
 
 function render(context) {
   const { el, win } = context;
-  const wEl = el().querySelector('[data-key="width"]');
-  const hEl = el().querySelector('[data-key="height"]');
+  const wEl = el.querySelector('[data-key="width"]');
+  const hEl = el.querySelector('[data-key="height"]');
 
   wEl.textContent = win.innerWidth;
   hEl.textContent = win.innerHeight;
 
-  el().style.left = `${win.innerWidth / 2 - wEl.clientHeight}px`;
-  el().style.top = `${win.innerHeight / 2 - Math.max(wEl.clientWidth, hEl.clientWidth) / 2}px`;
+  el.style.left = `${win.innerWidth / 2 - wEl.clientHeight}px`;
+  el.style.top = `${win.innerHeight / 2 - Math.max(wEl.clientWidth, hEl.clientWidth) / 2}px`;
 }

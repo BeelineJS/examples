@@ -19,7 +19,7 @@ function _setColourFn(context) {
   return function _setColour(value) {
     const { el } = context;
 
-    el().innerHTML = value.name;
-    el().className = value.css;
+    el.innerHTML = value.name;
+    el.className = value.css;
   }
 }

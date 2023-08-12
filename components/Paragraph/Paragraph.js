@@ -13,5 +13,5 @@ function create(context) {
 function render(context) {
   const { el, value, util } = context;
   const html = util.encode(value);
-  el().innerHTML = html;
+  el.innerHTML = html;
 }

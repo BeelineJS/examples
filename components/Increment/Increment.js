@@ -24,7 +24,7 @@ function init(context) {
 function render(context) {
   const { el, value, util } = context;
   const data = util.encode(value);
-  el().innerHTML = data;
+  el.innerHTML = data;
 }
 
 function _increment(context) {

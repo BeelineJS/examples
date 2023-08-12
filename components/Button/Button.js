@@ -25,7 +25,7 @@ function render(context) {
   if (!['click'].includes(e.type)) return;
 
   value = util.encode(value, doc);
-  el().innerHTML = value;
+  el.innerHTML = value;
 }
 
 function _onClick(context) {

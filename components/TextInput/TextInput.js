@@ -24,9 +24,9 @@ function init(context) {
 function render(context) {
   const { el, value, util } = context;
   const html = util.encode(value);
-  el().innerHTML = html;
+  el.innerHTML = html;
 }
 
 function _onInput(context) {
-  return context.el().value;
+  return context.el.value;
 }

@@ -27,6 +27,6 @@ function init(context) {
 function render(context) {
   const { e, el } = context;
 
-  el().style.top = `${e.clientY}px`;
-  el().style.left = `${e.clientX}px`;
+  el.style.top = `${e.clientY}px`;
+  el.style.left = `${e.clientX}px`;
 }
