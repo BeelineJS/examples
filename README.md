@@ -3,7 +3,7 @@ BeelineJS examples
 
 ### Run
 `npm run build`  
-`npm run ex:hx`  
+`npm run ex:hx` (example name)  
 or  
 `npm run all`  
 
