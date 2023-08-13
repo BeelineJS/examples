@@ -1,6 +1,11 @@
 # examples
 BeelineJS examples
 
+### Run
+`npm run build`
+`npm run ex:hx` or
+`npm run all`
+
 ### 1 - Paragrah
 Static one model one view load.
 
