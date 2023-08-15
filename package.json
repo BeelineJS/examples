@@ -21,6 +21,7 @@
     "ex:resize": "cd 12-resize && webpack --mode development",
     "ex:request": "cd 13-request.load && webpack --mode development",
     "ex:form": "cd 14-form && webpack --mode development",
+    "ex:nested": "cd 15-nested && webpack --mode development",
     "ex:todo": "cd todo && node build todo/components todo/layouts && webpack --mode development",
     "test": "jest",
     "test:silent": "jest --reporters jest-silent-reporter --collectCoverage=false",

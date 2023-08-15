@@ -16,17 +16,7 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ \"./src/style.scss\");\n\r\n\r\nconst components = __webpack_require__(/*! components */ \"../components/factory.js\");\r\nconst layouts = __webpack_require__(/*! layouts */ \"../layouts/factory.js\");\r\nconst request = __webpack_require__(/*! ./request */ \"./src/request.js\");\r\n\r\nconst data = __webpack_require__(/*! ./data.json */ \"./src/data.json\");\r\nconst BeelineJS = __webpack_require__(/*! beelinejs-core */ \"../node_modules/beelinejs-core/src/beeline.js\");\r\n\r\nBeelineJS\r\n    .create({\r\n        components,\r\n        layouts,\r\n        request\r\n    })\r\n    .onLoad(data);\n\n//# sourceURL=webpack:///./src/app.js?");
-
-/***/ }),
-
-/***/ "./src/request.js":
-/*!************************!*\
-  !*** ./src/request.js ***!
-  \************************/
-/***/ ((module) => {
-
-eval("module.exports = {\r\n    create\r\n}\r\n\r\nfunction create(onLoad, onError) {\r\n    return {\r\n        request\r\n    }\r\n\r\n\r\n\r\n    function request(context) {\r\n        switch (context.type.toLowerCase()) {\r\n            case 'post':\r\n                post(context)\r\n                return;\r\n        }\r\n        onError('post not implemented', context);\r\n\r\n        function post(context) {\r\n\r\n\r\n            let data = [];\r\n            switch (context.uri) {\r\n                case 'submit-form':\r\n                    submitForm(context, onLoad);\r\n                    break;\r\n\r\n                default:\r\n                    onError('invalid page name');\r\n                    break;\r\n            }\r\n\r\n            onLoad({\r\n                models: [data]\r\n            });\r\n        }\r\n    }\r\n}\r\n\r\nfunction submitForm(context, onLoad) {\r\n\r\n    onLoad({\r\n        \"models\": [{\r\n            \"key\": \"formResponse\",\r\n            \"value\": JSON.stringify(context.formData)\r\n        }],\r\n        \"layouts\": [{\r\n            \"name\": \"blank\",\r\n            \"parentPath\": \"#content .response  .content\"\r\n        }],\r\n        \"views\": [{\r\n            \"mKey\": \"formResponse\",\r\n            \"component\": \"Paragraph\",\r\n            \"parentPath\": \"#content .response  .content div\"\r\n        }]\r\n    })\r\n}\n\n//# sourceURL=webpack:///./src/request.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ \"./src/style.scss\");\n\r\n\r\nconst components = __webpack_require__(/*! components */ \"../components/factory.js\");\r\nconst data = __webpack_require__(/*! ./data.json */ \"./src/data.json\")\r\nconst BeelineJS = __webpack_require__(/*! beelinejs-core */ \"../node_modules/beelinejs-core/src/beeline.js\");\r\n\r\nBeelineJS\r\n    .create({\r\n        components\r\n    })\r\n    .onLoad(data);\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
@@ -176,7 +166,7 @@ eval("// auto generated based on components\\Paragraph\\Paragraph.html\n\nmodule
   \*****************************************************/
 /***/ ((module) => {
 
-eval("// auto generated based on components\\ParentChild\\ParentChild.html\n\nmodule.exports =  create;\n\nfunction create(value) {\n\n   return `<div>\r\n    <div>${value}</div>\r\n    <button data-key=\"increment\"></button>\r\n    <div class=\"children\"></div>\r\n</div>`;\n}\n\n//# sourceURL=webpack:///../components/ParentChild/ParentChild.html.js?");
+eval("// auto generated based on components\\ParentChild\\ParentChild.html\n\nmodule.exports =  create;\n\nfunction create(value) {\n\n   return `<div>\r\n    <div data-key=\"value\">${value}</div>\r\n    <button data-key=\"increment\">+</button>\r\n     <button data-key=\"decrement\">-</button>\r\n    <div class=\"children\"></div>\r\n</div>`;\n}\n\n//# sourceURL=webpack:///../components/ParentChild/ParentChild.html.js?");
 
 /***/ }),
 
@@ -186,7 +176,7 @@ eval("// auto generated based on components\\ParentChild\\ParentChild.html\n\nmo
   \************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = {\r\n  create,\r\n  init,\r\n  render\r\n}\r\n\r\nconst userEvents = {\r\n  'click': _increment\r\n}\r\n\r\nfunction create(context) {\r\n  const { value, util } = context;\r\n\r\n  return __webpack_require__(/*! ./ParentChild.html.js */ \"../components/ParentChild/ParentChild.html.js\")(util.encode(value));\r\n}\r\n\r\nfunction init(context) {\r\n  const { events } = context;\r\n  events.user.set(userEvents);\r\n}\r\n\r\nfunction render(context) {\r\n  const { el, value, util } = context;\r\n\r\n  const html = util.encode(value);\r\n  el.innerHTML = html;\r\n}\r\n\r\nfunction _increment(context) {\r\n  const { value } = context;\r\n  return value + 1;\r\n}\n\n//# sourceURL=webpack:///../components/ParentChild/ParentChild.js?");
+eval("module.exports = {\r\n  create,\r\n  init,\r\n  render\r\n}\r\n\r\nconst userEvents = {\r\n  'click/increment': _increment,\r\n  'click/decrement': _decrement,\r\n  'dblclick/increment': _increment,\r\n  'dblclick/decrement': _decrement,\r\n}\r\n\r\nfunction create(context) {\r\n  const { value, util } = context;\r\n\r\n  return __webpack_require__(/*! ./ParentChild.html.js */ \"../components/ParentChild/ParentChild.html.js\")(util.encode(value));\r\n}\r\n\r\nfunction init(context) {\r\n  const { events } = context;\r\n  events.user.set(userEvents);\r\n}\r\n\r\nfunction render(context) {\r\n  const { util, value } = context;\r\n  util.find('[data-key=\"value\"]').textContent = value;\r\n}\r\n\r\nfunction _increment(context) {\r\n  const { value } = context;\r\n  return value + 1;\r\n}\r\n\r\nfunction _decrement(context) {\r\n  const { value } = context;\r\n  return value === 0\r\n    ? 0\r\n    : value - 1;\r\n}\n\n//# sourceURL=webpack:///../components/ParentChild/ParentChild.js?");
 
 /***/ }),
 
@@ -297,46 +287,6 @@ eval("function create(context) {\r\n  const { e, view, viewModel, value, doc } =
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("// auto generated list of available components\n\nconst components = {\n'A': __webpack_require__(/*! ./A/A.js */ \"../components/A/A.js\"),\n'Alert': __webpack_require__(/*! ./Alert/Alert.js */ \"../components/Alert/Alert.js\"),\n'Button': __webpack_require__(/*! ./Button/Button.js */ \"../components/Button/Button.js\"),\n'ClassNameSubscriber': __webpack_require__(/*! ./ClassNameSubscriber/ClassNameSubscriber.js */ \"../components/ClassNameSubscriber/ClassNameSubscriber.js\"),\n'Hx': __webpack_require__(/*! ./Hx/Hx.js */ \"../components/Hx/Hx.js\"),\n'Increment': __webpack_require__(/*! ./Increment/Increment.js */ \"../components/Increment/Increment.js\"),\n'Paragraph': __webpack_require__(/*! ./Paragraph/Paragraph.js */ \"../components/Paragraph/Paragraph.js\"),\n'ParentChild': __webpack_require__(/*! ./ParentChild/ParentChild.js */ \"../components/ParentChild/ParentChild.js\"),\n'Pointer': __webpack_require__(/*! ./Pointer/Pointer.js */ \"../components/Pointer/Pointer.js\"),\n'Resize': __webpack_require__(/*! ./Resize/Resize.js */ \"../components/Resize/Resize.js\"),\n'Select': __webpack_require__(/*! ./Select/Select.js */ \"../components/Select/Select.js\"),\n'TextInput': __webpack_require__(/*! ./TextInput/TextInput.js */ \"../components/TextInput/TextInput.js\")\n};\n\nfunction get(key) {\n   if (components[key] == null) {\n      console.log('Component ' +key + ' not found')\n      return new components['Component']()\n   }\n\n   return {\n      ...__webpack_require__(/*! ./component */ \"../components/component.js\"),\n      ...components[key]\n   }\n}\n\nmodule.exports =  get;\n\n\n//# sourceURL=webpack:///../components/factory.js?");
-
-/***/ }),
-
-/***/ "../layouts/basic-layout/basic-layout.html.js":
-/*!****************************************************!*\
-  !*** ../layouts/basic-layout/basic-layout.html.js ***!
-  \****************************************************/
-/***/ ((module) => {
-
-eval("// auto generated by build/layouts.js\n\n    function get() {\n      return `<div class=\"basic-layout\">\r\n    <div class=\"section-a\"></div>\r\n    <div class=\"section-b\"></div>\r\n    <div class=\"section-c\"></div>\r\n</div>`;\n   }\n\n   module.exports =  get;\n  \n\n//# sourceURL=webpack:///../layouts/basic-layout/basic-layout.html.js?");
-
-/***/ }),
-
-/***/ "../layouts/blank/blank.html.js":
-/*!**************************************!*\
-  !*** ../layouts/blank/blank.html.js ***!
-  \**************************************/
-/***/ ((module) => {
-
-eval("// auto generated by build/layouts.js\n\n    function get() {\n      return `<div></div>`;\n   }\n\n   module.exports =  get;\n  \n\n//# sourceURL=webpack:///../layouts/blank/blank.html.js?");
-
-/***/ }),
-
-/***/ "../layouts/factory.js":
-/*!*****************************!*\
-  !*** ../layouts/factory.js ***!
-  \*****************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("// auto generated by build/layouts.js\n\nmodule.exports = get;\n\nconst layouts = {\n   'basic-layout': __webpack_require__(/*! ./basic-layout/basic-layout.html.js */ \"../layouts/basic-layout/basic-layout.html.js\"),\n\t'blank': __webpack_require__(/*! ./blank/blank.html.js */ \"../layouts/blank/blank.html.js\"),\n\t'form-layout': __webpack_require__(/*! ./form-layout/form-layout.html.js */ \"../layouts/form-layout/form-layout.html.js\")\n};\n\nfunction get(type) {\n   if (layouts[type] == null) {\n      console.log('layout not found for ', type);\n   }\n\n   return layouts[type]();\n}\n\n//# sourceURL=webpack:///../layouts/factory.js?");
-
-/***/ }),
-
-/***/ "../layouts/form-layout/form-layout.html.js":
-/*!**************************************************!*\
-  !*** ../layouts/form-layout/form-layout.html.js ***!
-  \**************************************************/
-/***/ ((module) => {
-
-eval("// auto generated by build/layouts.js\n\n    function get() {\n      return `<div class=\"form-layout\">\r\n    <div class=\"form\">\r\n        <h1>Form</h1>\r\n        <hr />\r\n        <div>\r\n            <label>First Name:</label>\r\n            <span class=\"first-name\"></span>\r\n        </div>\r\n        <div>\r\n            <label>Last Name:</label>\r\n            <span class=\"last-name\"></span>\r\n        </div>\r\n        <div>\r\n            <label>Gender:</label>\r\n            <span class=\"gender\"></span>\r\n        </div>\r\n        <div>\r\n            <label>Email:</label>\r\n            <span class=\"email\"></span>\r\n        </div>\r\n        <div>\r\n            <label>Phone:</label>\r\n            <span class=\"phone\"></span>\r\n        </div>\r\n        <div>\r\n            <label></label>\r\n            <span class=\"submit-form\">\r\n        </div>\r\n    </div>\r\n    <div class=\"response\">\r\n\r\n        <h1>Response</h1>\r\n        <hr />\r\n        <div class=\"content\"></div>\r\n    </div>\r\n</div>`;\n   }\n\n   module.exports =  get;\n  \n\n//# sourceURL=webpack:///../layouts/form-layout/form-layout.html.js?");
 
 /***/ }),
 
@@ -548,7 +498,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((module) => {
 
 "use strict";
-eval("module.exports = JSON.parse('{\"models\":[{\"key\":\"FirstName\",\"value\":\"\",\"form\":\"Form\"},{\"key\":\"LastName\",\"value\":\"\",\"form\":\"Form\"},{\"key\":\"Gender\",\"value\":\"\",\"form\":\"Form\"},{\"key\":\"Email\",\"value\":\"\",\"form\":\"Form\"},{\"key\":\"Phone\",\"value\":\"\",\"form\":\"Form\"},{\"key\":\"Submit\",\"value\":\"Submit\"}],\"views\":[{\"mKey\":\"FirstName\",\"component\":\"TextInput\",\"parentPath\":\".form .first-name\"},{\"mKey\":\"LastName\",\"component\":\"TextInput\",\"parentPath\":\".form .last-name\"},{\"mKey\":\"Gender\",\"component\":\"TextInput\",\"parentPath\":\".form .gender\"},{\"mKey\":\"Email\",\"component\":\"TextInput\",\"parentPath\":\".form .email\"},{\"mKey\":\"Phone\",\"component\":\"TextInput\",\"parentPath\":\".form .phone\"},{\"mKey\":\"Submit\",\"component\":\"Button\",\"parentPath\":\".submit-form\",\"request\":{\"type\":\"post\",\"uri\":\"submit-form\",\"formKey\":\"Form\",\"data\":{}}}],\"layouts\":[{\"name\":\"form-layout\",\"parentPath\":\"#content\"}]}');\n\n//# sourceURL=webpack:///./src/data.json?");
+eval("module.exports = JSON.parse('{\"models\":[{\"key\":\"p1\",\"value\":1},{\"key\":\"p2\",\"value\":2},{\"key\":\"p3\",\"value\":3},{\"key\":\"p4\",\"value\":3},{\"key\":\"p5\",\"value\":3}],\"views\":[{\"mKey\":\"p1\",\"component\":\"ParentChild\",\"parentPath\":\"body\"},{\"mKey\":\"p2\",\"component\":\"ParentChild\",\"parentPath\":\".ParentChild > .children\"},{\"mKey\":\"p3\",\"component\":\"ParentChild\",\"parentPath\":\".ParentChild > .children > .ParentChild > .children\"},{\"mKey\":\"p4\",\"component\":\"ParentChild\",\"parentPath\":\".ParentChild > .children > .ParentChild > .children > .ParentChild > .children\"},{\"mKey\":\"p5\",\"component\":\"ParentChild\",\"parentPath\":\".ParentChild > .children > .ParentChild > .children > .ParentChild > .children > .ParentChild > .children\"}]}');\n\n//# sourceURL=webpack:///./src/data.json?");
 
 /***/ })
 

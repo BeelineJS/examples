@@ -1,0 +1,51 @@
+{
+    "models": [
+        {
+            "key": "p1",
+            "value": 1
+        },
+        {
+            "key": "p2",
+            "value": 2
+        },
+        {
+            "key": "p3",
+            "value": 3
+        },
+        {
+            "key": "p4",
+            "value": 4
+        },
+        {
+            "key": "p5",
+            "value": 5
+        }
+    ],
+    "views": [
+        {
+            "mKey": "p1",
+            "component": "ParentChild",
+            "parentPath": "body"
+        },
+        {
+            "mKey": "p2",
+            "component": "ParentChild",
+            "parentPath": ".ParentChild > .children"
+        },
+        {
+            "mKey": "p3",
+            "component": "ParentChild",
+            "parentPath": ".ParentChild > .children > .ParentChild > .children"
+        },
+        {
+            "mKey": "p4",
+            "component": "ParentChild",
+            "parentPath": ".ParentChild > .children > .ParentChild > .children > .ParentChild > .children"
+        },
+        {
+            "mKey": "p5",
+            "component": "ParentChild",
+            "parentPath": ".ParentChild > .children > .ParentChild > .children > .ParentChild > .children > .ParentChild > .children"
+        }
+    ]
+}

@@ -8,6 +8,7 @@ const components = {
 'Hx': require('./Hx/Hx.js'),
 'Increment': require('./Increment/Increment.js'),
 'Paragraph': require('./Paragraph/Paragraph.js'),
+'ParentChild': require('./ParentChild/ParentChild.js'),
 'Pointer': require('./Pointer/Pointer.js'),
 'Resize': require('./Resize/Resize.js'),
 'Select': require('./Select/Select.js'),
