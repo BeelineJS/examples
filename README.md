@@ -7,6 +7,8 @@ BeelineJS examples
 or  
 `npm run all`  
 
+Open the index.html file in the /dist folder
+
 ### 1 - Paragrah
 Static one model one view load.
 
